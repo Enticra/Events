@@ -1,0 +1,18 @@
+{
+  "name": "popcorn-events-server",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env --watch --disable-warning=ExperimentalWarning src/index.js",
+    "start": "node --env-file-if-exists=.env --disable-warning=ExperimentalWarning src/index.js",
+    "stripe:listen": "stripe listen --forward-to localhost:4000/api/stripe/webhook",
+    "db:import-sqlite": "node --env-file-if-exists=.env --disable-warning=ExperimentalWarning scripts/import-sqlite.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "pg": "^8.13.1",
+    "stripe": "^17.7.0"
+  }
+}
